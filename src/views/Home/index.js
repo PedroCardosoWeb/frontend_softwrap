@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import * as S from './styles'
 
 import Header from '../../Components/Header'
@@ -8,24 +8,58 @@ import Table from '../../Components/Table'
 import api from '../../services/api'
 
 function Home() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
   
   async function loadPeople(){
     await api.get('/people/')
     .then(response => {
-      setData(response.data);
+      setData(response.data)
     })
   }
 
+const columns = useMemo(
+  () => [
+    {
+      Header: 'Nome',
+      accessor: 'nome',
+    },
+    {
+      Header: 'Idade',
+      accessor: 'idade',
+    },
+    {
+      Header: 'CPF',
+      accessor: 'cpf',
+    },
+    {
+      Header: 'Estado Civil',
+      accessor: 'estado_civil',
+    },
+    {
+      Header: 'Cidade',
+      accessor: 'cidade',
+    },
+    {
+      Header: 'Estado',
+      accessor: 'estado',
+    },
+  ],
+[]
+)
+
 useEffect(() => {
       loadPeople()
-  }, []);
+  }, [])
 
   return (
     <S.Container>
       <Header/>
-        
-        <table>
+            <Table columns={columns} data={data}/>
+        {/* {
+          data.map(people => (
+          ))
+        } */}
+        {/* <table>
           <thead>
             <tr>
             <th>Nome</th>
@@ -52,8 +86,7 @@ useEffect(() => {
               </S.Container>
             ))
           }
-        </table>
-               
+        </table> */}
       <Footer/>
     </S.Container>
   )
