@@ -4,6 +4,7 @@ import * as S from './styles'
 import Header from '../../Components/Header'
 import Footer from '../../Components/Footer'
 import Table from '../../Components/Table'
+import Form from '../../Components/Form'
 
 import api from '../../services/api'
 
@@ -19,30 +20,12 @@ function Home() {
 
 const columns = useMemo(
   () => [
-    {
-      Header: 'Nome',
-      accessor: 'nome',
-    },
-    {
-      Header: 'Idade',
-      accessor: 'idade',
-    },
-    {
-      Header: 'CPF',
-      accessor: 'cpf',
-    },
-    {
-      Header: 'Estado Civil',
-      accessor: 'estado_civil',
-    },
-    {
-      Header: 'Cidade',
-      accessor: 'cidade',
-    },
-    {
-      Header: 'Estado',
-      accessor: 'estado',
-    },
+    { Header: 'Nome', accessor: 'nome'},
+    { Header: 'Idade', accessor: 'idade'},
+    { Header: 'CPF', accessor: 'cpf'},
+    { Header: 'Estado Civil',  accessor: 'estado_civil'},
+    { Header: 'Cidade', accessor: 'cidade'},
+    { Header: 'Estado', accessor: 'estado'}
   ],
 []
 )
@@ -54,39 +37,9 @@ useEffect(() => {
   return (
     <S.Container>
       <Header/>
-            <Table columns={columns} data={data}/>
-        {/* {
-          data.map(people => (
-          ))
-        } */}
-        {/* <table>
-          <thead>
-            <tr>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>CPF</th>
-            <th>Estado Civil</th>
-            <th>Cidade</th>
-            <th>Estado</th>
-            </tr>
-          </thead>
-          {
-            data.map(people => (
-              <S.Container>              
-                <tbody>
-                  <tr>
-                    <td>{people.nome}</td>
-                    <td>{people.idade}</td>
-                    <td>{people.cpf}</td>
-                    <td>{people.estado_civil}</td>
-                    <td>{people.cidade}</td>
-                    <td>{people.estado}</td>
-                  </tr>
-                </tbody>
-              </S.Container>
-            ))
-          }
-        </table> */}
+        <S.Content>
+          <Table columns={columns} data={data}/>
+        </S.Content>
       <Footer/>
     </S.Container>
   )
