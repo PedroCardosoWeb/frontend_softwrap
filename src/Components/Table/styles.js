@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
 export const Table = styled.div`
+margin: 0 auto;
+align-items: center;
+justify-content: center;
+display: flex;
+${'' /* flex-direction: column; */}
+
 table {
     font-size: 16px;
     border: 1px solid black;
     border-spacing: 0;
     margin-bottom: 100px;
-
    tr {
      :last-child {
        td {
@@ -32,6 +37,10 @@ table {
      font-size: 17px;
    }
  }
+   .pagination {
+      ${'' /* position: relative;
+      padding-top: 430px; */}
+   }
 `
 
 

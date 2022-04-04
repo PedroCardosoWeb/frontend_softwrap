@@ -2,13 +2,13 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 width: 100%;
-justify-content: center;
-align-items: center;
+
 `
 
 export const Content = styled.div`
 width: 100%;
-display: flex;
+${'' /* display: flex;
+flex-position: column; */}
 align-items: center;
 justify-content: center;
 margin-top: 10px;
