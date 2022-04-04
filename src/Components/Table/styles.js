@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Table = styled.div`
 table {
-   border-spacing: 0;
-   border: 1px solid black;
+    font-size: 16px;
+    border: 1px solid black;
+    border-spacing: 0;
+    margin-bottom: 100px;
 
    tr {
      :last-child {
@@ -18,7 +20,6 @@ table {
      padding: 0.5rem;
      border-bottom: 1px solid black;
      border-right: 1px solid black;
-
      :last-child {
        border-right: 0;
      }
@@ -28,7 +29,9 @@ table {
      background: lightgrey;
      color: black;
      fontWeight: bold;
+     font-size: 17px;
    }
  }
 `
+
 

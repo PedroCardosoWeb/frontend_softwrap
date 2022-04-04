@@ -10,6 +10,7 @@ import api from '../../services/api'
 
 function Home() {
   const [data, setData] = useState([])
+  const [upToDate, setUpToDate] = useState(false) // for update
   
   async function loadPeople(){
     await api.get('/people/')
@@ -25,24 +26,33 @@ const columns = useMemo(
     { Header: 'CPF', accessor: 'cpf'},
     { Header: 'Estado Civil',  accessor: 'estado_civil'},
     { Header: 'Cidade', accessor: 'cidade'},
-    { Header: 'Estado', accessor: 'estado'}
+    { Header: 'Estado', accessor: 'estado'},
+    { Header: 'Opções', acessor: 'acao'}
   ],
 []
 )
 
 useEffect(() => {
       loadPeople()
+      setUpToDate(false)
   }, [])
 
   return (
     <S.Container>
       <Header/>
+
+        <S.Content>
+          <Form />
+        </S.Content>
+        <S.Title>
+          <h2>Registros</h2>  
+        </S.Title>  
         <S.Content>
           <Table columns={columns} data={data}/>
         </S.Content>
+
       <Footer/>
     </S.Container>
   )
 }
-
 export default Home

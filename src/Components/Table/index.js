@@ -15,7 +15,7 @@ export default function Table({ columns, data }) {
   });
 
   return (
-    <S.Container>
+    <S.Table>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map(headerGroup => (
@@ -39,6 +39,6 @@ export default function Table({ columns, data }) {
           })}
         </tbody>
       </table>
-    </S.Container>
+    </S.Table>
   );
 }
