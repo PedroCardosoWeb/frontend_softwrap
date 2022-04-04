@@ -1,5 +1,7 @@
 # frontend_softwrap
 
+A proposta deste pequeno projeto é realizar as operações CRUD, utilizando a stack Node/React/MongoDB.
+
 O frontend desta aplicação foi construído com React.js (create-app-react), utilizando componentes estilizados com StyledComponents e outros recursos e bibliotecas como: react-table, axios, npm, entre outros; fazendo o uso de Hooks em componentes funcionais ao invés de classes.
 
 O deploy foi realizado na plataforma heroku, onde está hospedado também o backend da aplicação, construído com Node.js, utilizando recursos de bibliotecas como: express, axios, cors, mongoose, entre outros. 
