@@ -21,13 +21,13 @@ function Home() {
 
 const columns = useMemo(
   () => [
-    { Header: 'Nome', accessor: 'nome'},
-    { Header: 'Idade', accessor: 'idade'},
-    { Header: 'CPF', accessor: 'cpf'},
-    { Header: 'Estado Civil',  accessor: 'estado_civil'},
-    { Header: 'Cidade', accessor: 'cidade'},
-    { Header: 'Estado', accessor: 'estado'}
-  ],
+    { Header: 'Nome', accessor: 'nome', width: 100},
+    { Header: 'Idade', accessor: 'idade', width: 50},
+    { Header: 'CPF', accessor: 'cpf', width: 120},
+    { Header: 'Estado Civil',  accessor: 'estado_civil', width: 100},
+    { Header: 'Cidade', accessor: 'cidade', width: 100},
+    { Header: 'Estado', accessor: 'estado', width: 60}
+    ],
 []
 )
 
@@ -39,14 +39,12 @@ useEffect(() => {
   return (
     <S.Container>
       <Header/>
-
-        <S.Content>
           <Form />
-        </S.Content>
         <S.Title>
           <h2>Registros</h2>  
         </S.Title>  
         <S.Content>
+
           <Table columns={columns} data={data}/>
         </S.Content>
 

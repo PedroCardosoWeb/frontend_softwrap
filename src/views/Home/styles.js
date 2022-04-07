@@ -6,13 +6,10 @@ width: 100%;
 `
 
 export const Content = styled.div`
-width: 100%;
-${'' /* display: flex;
-flex-position: column; */}
-align-items: center;
+display: flex;
 justify-content: center;
-margin-top: 10px;
 `
+
 export const Title = styled.div`
     width: 100%;
     border-bottom: 1px solid #20295F;
