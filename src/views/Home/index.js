@@ -26,8 +26,7 @@ const columns = useMemo(
     { Header: 'CPF', accessor: 'cpf'},
     { Header: 'Estado Civil',  accessor: 'estado_civil'},
     { Header: 'Cidade', accessor: 'cidade'},
-    { Header: 'Estado', accessor: 'estado'},
-    { Header: 'Opções', acessor: 'acao'}
+    { Header: 'Estado', accessor: 'estado'}
   ],
 []
 )

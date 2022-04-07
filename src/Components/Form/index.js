@@ -100,6 +100,7 @@ function Form({match}){
                 placeholder='Selecione uma opção'                 
                 onChange={e => setEstado_civil(e.target.value)}
                 value={estado_civil}>
+                    <option value="">Selecione uma opção</option>
                     <option value="Solteiro(a)">Solteiro(a)</option>
                     <option value="Casado(a)">Casado(a)</option>
                     <option value="Divorciado(a)">Divorciado(a)</option>
@@ -120,6 +121,7 @@ function Form({match}){
                 placeholder="Selecione um estado:"
                 onChange={e => setEstado(e.target.value)}
                 value={estado}>
+                    <option value="">Selecione uma opção</option>
                     <option value="SP">SP</option>
                     <option value="MG">MG</option>
                     <option value="RJ">RJ</option>

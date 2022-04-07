@@ -4,7 +4,7 @@ import * as S from './styles';
 function Header() {
   return (
     <S.Container>
-        <h1>ThePeople - Dev Test</h1>
+        <h1>The People - Dev Test</h1>
     </S.Container>
   ) 
 }
