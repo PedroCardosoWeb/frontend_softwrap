@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTable, useBlockLayout, useExpanded, usePagination } from "react-table";
 import * as S from './styles'
+import api from '../../services/api'
 
 export default function Table({ 
   columns, 
@@ -11,6 +12,44 @@ export default function Table({
   // pageCount: controlledPageCount
   }) 
   {
+    // const [selectUpdDel, setSelectUpdDel] = useState()
+    // verificar selectUpdDel para Action (update || delete) na função
+
+    // function handleChanges(e){
+    //   setSelectUpdDel(e.target.value)
+    //   if(selectUpdDel === 'delete'){
+    //     alert('del')
+    //   } if(selectUpdDel === 'update'){
+    //       alert('upd')
+    //     } if(selectUpdDel === '--'){
+
+    //       }
+    // }
+
+    // const options = [
+    //   {
+    //     label: "--",
+    //     value: ""
+    //   },      {
+    //     label: "alterar",
+    //     value: "update"
+    //   },
+    //   {
+    //     label: "remover",
+    //     value: "delete"
+    //   }
+    // ]
+    
+    async function Remove(match){
+      const res = window.confirm('Deseja realmente remover este cadastro?')
+      if(res===true){
+      await api.delete(`/people/${match.params.id}`)
+          .then(() => 
+          alert("Cadastro removido!")
+          )
+      } 
+    }
+
     const defaultColumn = React.useMemo(
       () => ({
         width: 150,
@@ -80,6 +119,15 @@ export default function Table({
                     </div>
                   )
                 })}
+                
+                {/* <div className="select-container">
+                  <select value={'selecione'} onChange={handleChanges}>
+                    {options.map((option) => (
+                      <option value={option.value}>{option.label}</option>
+                    ))}
+                  </select>
+                </div> */}
+
               </div>
             )}
         )}

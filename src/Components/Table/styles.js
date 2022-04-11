@@ -7,16 +7,12 @@ export const Table = styled.div`
   overflow-x: scroll;
   ${'' /* display: flex; */}
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 501px) {
      display: flex;
      justify-content: center; 
-     overflow-x: scroll;
+     margin-left: 2px;
   }  
 
-  ${'' /* @media only screen and (max-width: 400px) {
-     display: flex;
-     justify-content: flex-start;   
-  }   */}
 
 .table {
   display: inline-block;

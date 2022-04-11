@@ -18,16 +18,16 @@ function Form({match}){
         //validação
         if(!nome)
         return alert("Favor informar o nome")
-        else if(!idade)
-        return alert("Favor informar a idade")
-        else if(!cpf)
-        return alert("Favor informar o CPF")
-        else if(!estado_civil)
-        return alert("Favor informar o estado civil")
-        else if(!cidade)
-        return alert("Favor informar a cidade")
-        else if(!estado)
-        return alert("Favor informar o estado")
+            else if(!idade)
+            return alert("Favor informar a idade")
+                else if(!cpf)
+                return alert("Favor informar o CPF")
+                    else if(!estado_civil)
+                    return alert("Favor informar o estado civil")
+                        else if(!cidade)
+                        return alert("Favor informar a cidade")
+                            else if(!estado)
+                            return alert("Favor informar o estado")
         
         // if(match.params.id){
         //     await api.put(`/people/${match.params.id}`, {
@@ -56,15 +56,15 @@ function Form({match}){
                 // }
         }
 
-    async function Remove(){
-        const res = window.confirm('Deseja realmente remover este cadastro?')
-        if(res===true){
-        await api.delete(`/people/${match.params.id}`)
-            .then(() => 
-            alert("Cadastro removido!")
-            )
-        } 
-    }
+    // async function Remove(){
+    //     const res = window.confirm('Deseja realmente remover este cadastro?')
+    //     if(res===true){
+    //     await api.delete(`/people/${match.params.id}`)
+    //         .then(() => 
+    //         alert("Cadastro removido!")
+    //         )
+    //     } 
+    // }
 
     // useEffect(() => {
     //     LoadPeople();
